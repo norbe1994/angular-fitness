@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core'
 import { MaterialModule } from './material.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module'
+import { FlexLayoutModule } from '@angular/flex-layout'
+
 import { AppComponent } from './app.component'
 import { LoginComponent } from './auth/login/login.component'
 import { SignupComponent } from './auth/signup/signup.component'
@@ -24,7 +26,13 @@ import { TrainingComponent } from './training/training.component'
     NewComponent,
     TrainingComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FlexLayoutModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
