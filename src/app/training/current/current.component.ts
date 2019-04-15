@@ -22,6 +22,7 @@ export class CurrentComponent implements OnInit {
     this.timer = setInterval(() => {
       this.progress += 5
       if (this.progress >= 100) {
+        this.progress = 100
         clearInterval(this.timer)
       }
     }, 500)
