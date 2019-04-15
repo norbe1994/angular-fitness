@@ -4,3 +4,11 @@
 .main-container {
   margin: 20px;
 }
+
+.auth-card {
+  max-width: 450px;
+  position: fixed;
+  margin: 5% auto;
+  top: 0;
+  left: 0;
+}
