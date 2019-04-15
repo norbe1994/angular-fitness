@@ -9,7 +9,8 @@
     <mat-card-content>
       <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px" #f="ngForm" (ngSubmit)="onSubmit(f)">
         <mat-form-field>
-          <input type="email" matInput placeholder="E-mail" ngModel name="email" email required #emailInput="ngModel">
+          <input type="email" matInput placeholder="E-mail" ngModel name="email" email required #emailInput="ngModel"
+            autocomplete="off">
           <mat-error *ngIf="emailInput.hasError('required')">Field cannot be empty.</mat-error>
           <mat-error *ngIf="!emailInput.hasError('required')">E-mail is invalid.</mat-error>
         </mat-form-field>
