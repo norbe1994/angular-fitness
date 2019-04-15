@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
-
+import { FormsModule } from '@angular/forms'
 import { MaterialModule } from './material.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module'
@@ -32,6 +32,7 @@ import { TrainingComponent } from './training/training.component'
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

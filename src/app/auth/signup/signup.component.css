@@ -1,3 +1,11 @@
 mat-form-field {
   width: 300px;
 }
+
+.success-text {
+  color: #00c851;
+}
+
+button {
+  margin-top: 5px;
+}
