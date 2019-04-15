@@ -9,12 +9,12 @@ import { Exercise } from '../exercise.model'
 })
 export class NewComponent implements OnInit {
   @Output() trainingStart = new EventEmitter<void>()
-  public availableExercises: Exercise[] = []
+  public exercises: Exercise[] = []
 
   constructor(private trainingService: TrainingService) {}
 
   ngOnInit() {
-    this.availableExercises = this.trainingService.availableExercises
+    this.exercises = this.trainingService.getAvailableExercises()
   }
 
   onStartTraining() {
