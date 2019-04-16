@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { AuthService } from './providers/auth.service'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  title = 'angular-fitness-tracker';
+export class AppComponent implements OnInit {
+  title = 'angular-fitness-tracker'
+
+  constructor(private auth: AuthService) {}
+
+  ngOnInit() {
+    this.auth.initAuthListener()
+  }
 }
