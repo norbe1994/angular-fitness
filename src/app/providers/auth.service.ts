@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core'
 import { AuthData } from '../auth/auth-data'
 import { Router } from '@angular/router'
 import { TrainingService } from './training.service'
-import { MatSnackBar } from '@angular/material/snack-bar'
 import { UIService } from '../shared/ui.service'
 
 @Injectable({
@@ -18,7 +17,6 @@ export class AuthService {
     private router: Router,
     private auth: AngularFireAuth,
     private trainingService: TrainingService,
-    private snackBar: MatSnackBar,
     private uiService: UIService,
   ) {}
 
@@ -46,7 +44,7 @@ export class AuthService {
       })
       .catch(err => {
         this.uiService.loadingStateChanged.next(false)
-        this.openSnackBar(err.message, 'cerrar', 5000)
+        this.uiService.openSnackBar(err.message, 'close', 5000)
       })
   }
 
@@ -59,7 +57,7 @@ export class AuthService {
       })
       .catch(err => {
         this.uiService.loadingStateChanged.next(false)
-        this.openSnackBar(err.message, 'close', 5000)
+        this.uiService.openSnackBar('Invalid credentials', 'close', 5000)
       })
   }
 
@@ -69,11 +67,5 @@ export class AuthService {
 
   isAuth() {
     return this.isAuthenticated
-  }
-
-  openSnackBar(message: string, action: string, duration: number) {
-    this.snackBar.open(message, action, {
-      duration,
-    })
   }
 }
