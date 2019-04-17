@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core'
 import { NgForm } from '@angular/forms'
-
 import { TrainingService } from 'src/app/providers/training.service'
 import { Exercise } from '../exercise.model'
 import { Subscription } from 'rxjs'
@@ -13,6 +12,7 @@ import { Subscription } from 'rxjs'
 export class NewComponent implements OnInit, OnDestroy {
   public exercises: Exercise[]
   public exerciseSubscription: Subscription
+  public isLoading: boolean = true
 
   constructor(private trainingService: TrainingService) {}
 
@@ -20,6 +20,7 @@ export class NewComponent implements OnInit, OnDestroy {
     this.exerciseSubscription = this.trainingService.exercisesChanged.subscribe(
       (data: Exercise[]) => {
         this.exercises = data
+        this.isLoading = false
       },
     )
     this.trainingService.fetchAvailableExercises()
