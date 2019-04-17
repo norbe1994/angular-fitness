@@ -40,6 +40,8 @@ export class PastComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.changedSubscripton.unsubscribe()
+    if (this.changedSubscripton) {
+      this.changedSubscripton.unsubscribe()
+    }
   }
 }

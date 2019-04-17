@@ -5,7 +5,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module'
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { AngularFireModule } from 'angularfire2'
-import { AngularFireAuthModule } from 'angularfire2/auth'
 
 import { AppComponent } from './app.component'
 import { WelcomeComponent } from './welcome/welcome.component'
@@ -29,7 +28,6 @@ import { TrainingModule } from './training/training.module'
     AuthModule,
     TrainingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
   ],
   providers: [AuthService, TrainingService, UIService],
   bootstrap: [AppComponent],
