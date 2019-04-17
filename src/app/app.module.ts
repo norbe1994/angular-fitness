@@ -10,8 +10,6 @@ import { AngularFirestoreModule } from 'angularfire2/firestore'
 import { AngularFireAuthModule } from 'angularfire2/auth'
 
 import { AppComponent } from './app.component'
-import { LoginComponent } from './auth/login/login.component'
-import { SignupComponent } from './auth/signup/signup.component'
 import { WelcomeComponent } from './welcome/welcome.component'
 import { PastComponent } from './training/past/past.component'
 import { CurrentComponent } from './training/current/current.component'
@@ -24,12 +22,11 @@ import { AuthService } from './providers/auth.service'
 import { TrainingService } from './providers/training.service'
 import { environment } from '../environments/environment'
 import { UIService } from './shared/ui.service'
+import { AuthModule } from './auth/auth.module'
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    SignupComponent,
     WelcomeComponent,
     PastComponent,
     CurrentComponent,
@@ -45,7 +42,7 @@ import { UIService } from './shared/ui.service'
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    FormsModule,
+    AuthModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
