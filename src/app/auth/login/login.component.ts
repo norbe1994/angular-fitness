@@ -14,7 +14,8 @@ import * as fromRoot from '../../app.reducer'
 })
 export class LoginComponent implements OnInit {
   public isLoading$: Observable<boolean>
-  private loadingSubs: Subscription
+  // public isLoading: boolean = false
+  // private loadingSubs: Subscription
 
   constructor(
     private authService: AuthService,
