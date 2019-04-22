@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module'
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { AngularFireModule } from 'angularfire2'
 import { StoreModule } from '@ngrx/store'
-import { appReducer } from './app.reducer'
+import { reducers } from './app.reducer'
 
 import { AppComponent } from './app.component'
 import { WelcomeComponent } from './welcome/welcome.component'
@@ -30,7 +30,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore'
     AuthModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
-    StoreModule.forRoot({ ui: appReducer }),
+    StoreModule.forRoot(reducers),
   ],
   providers: [AuthService, TrainingService, UIService],
   bootstrap: [AppComponent],
