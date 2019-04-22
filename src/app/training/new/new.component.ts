@@ -11,13 +11,13 @@ import { Subscription } from 'rxjs'
 })
 export class NewComponent implements OnInit, OnDestroy {
   public exercises: Exercise[]
-  public exerciseSubscription: Subscription
+  public exercisesSubscription: Subscription
   public isLoading: boolean = true
 
   constructor(private trainingService: TrainingService) {}
 
   ngOnInit() {
-    this.exerciseSubscription = this.trainingService.exercisesChanged.subscribe(
+    this.exercisesSubscription = this.trainingService.exercisesChanged.subscribe(
       (data: Exercise[]) => {
         this.exercises = data
         this.isLoading = false
@@ -35,8 +35,8 @@ export class NewComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.exerciseSubscription) {
-      this.exerciseSubscription.unsubscribe()
+    if (this.exercisesSubscription) {
+      this.exercisesSubscription.unsubscribe()
     }
   }
 }
