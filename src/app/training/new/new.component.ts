@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { NgForm } from '@angular/forms'
 import { TrainingService } from 'src/app/providers/training.service'
 import { Exercise } from '../exercise.model'
-import { Subscription, Observable } from 'rxjs'
+import { Observable } from 'rxjs'
 import { Store } from '@ngrx/store'
 import { UIService } from 'src/app/shared/ui.service'
 import * as fromRoot from '../../app.reducer'
@@ -15,7 +15,6 @@ import * as fromTraining from '../training.reducer'
 })
 export class NewComponent implements OnInit {
   public exercises$: Observable<Exercise[]>
-  public exercisesSubscription: Subscription
   public isLoading$: Observable<boolean>
   // public isLoading: boolean = true
 
