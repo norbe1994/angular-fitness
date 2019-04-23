@@ -74,7 +74,7 @@ export class TrainingService {
           duration: (exercise.duration * progress) / 100,
           calories: (exercise.calories * progress) / 100,
           date: new Date(),
-          state: 'completed',
+          state: 'cancelled',
         })
         this.store.dispatch(new Training.StopTraining())
       })
