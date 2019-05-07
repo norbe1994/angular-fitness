@@ -101,7 +101,7 @@ export class TrainingService {
     this.db
       .collection('finishedExercises')
       .add(data)
-      .then(data => {
+      .then(() => {
         console.log('write to db successful')
       })
       .catch(err => console.log(err))
